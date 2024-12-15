@@ -24,5 +24,67 @@ Aceasta este o aplicație Spring Boot pentru gestionarea task-urilor. Permite ut
 
 Pentru a începe să lucrezi cu proiectul, clonează-l pe mașina ta locală folosind comanda:
 
-```bash
 git clone https://github.com/USERNAME/TaskManager-GenTech.git
+
+### 2. Intră în directorul proiectului:
+
+După ce ai clonat repository-ul, navighează în directorul proiectului:
+
+cd TaskManager-GenTech
+
+### 3. Rulează aplicația:
+Pentru a rula aplicația, poți folosi comanda Maven:
+
+./mvnw spring-boot:run
+
+Dacă ai deja Maven instalat, poți să construiești și să rulezi aplicația folosind comanda:
+
+./mvnw clean install
+java -jar target/TaskManager-GenTech-0.0.1-SNAPSHOT.jar
+
+### 4. Testează API-ul
+Poți testa API-ul folosind Postman, cURL sau orice alt instrument pentru interacțiunea cu API-urile RESTful. Iată câteva exemple de endpoint-uri pentru a interacționa cu aplicația:
+
+GET toate task-urile:
+Endpoint: GET http://localhost:8080/api/tasks
+
+POST pentru a crea un task:
+Endpoint: POST http://localhost:8080/api/tasks
+
+Corpul JSON:
+{
+  "description": "Finish project",
+  "isComplete": false
+}
+
+PUT pentru a actualiza un task:
+Endpoint: PUT http://localhost:8080/api/tasks/{id}
+
+Corpul JSON:
+{
+  "description": "Finish project",
+  "isComplete": true
+}
+
+DELETE pentru a șterge un task:
+Endpoint: DELETE http://localhost:8080/api/tasks/{id}
+
+Accesarea consolei H2
+Aplicația folosește baza de date H2 pentru testare. Pentru a accesa consola H2, urmează acești pași:
+
+Asigură-te că aplicația este pornită.
+
+Deschide un browser web și navighează la: http://localhost:8080/h2-console
+
+Introdu detaliile de conectare:
+
+JDBC URL: jdbc:h2:file:./data/demoo
+
+User Name: sa
+
+Password: password
+
+
+
+
+
