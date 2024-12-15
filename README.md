@@ -10,7 +10,7 @@ Aceasta este o aplicație Spring Boot pentru gestionarea task-urilor. Permite ut
 
 ## Funcționalități
 
-- Crearea unui task cu detalii precum descriere și starea de completare.
+- Crearea unui task cu detalii precum descrierea și starea de completare.
 - Vizualizarea tuturor task-urilor.
 - Actualizarea unui task existent.
 - Ștergerea unui task.
