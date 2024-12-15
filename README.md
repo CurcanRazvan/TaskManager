@@ -1,6 +1,8 @@
 # TaskManager GenTech
 
-Aceasta este o aplicație Spring Boot pentru gestionarea task-urilor. Permite utilizatorilor să adauge, vizualizeze, actualizeze și șteargă task-uri.
+Aceasta este o aplicație Spring Boot pentru gestionarea task-urilor. Permite utilizatorilor să adauge, vizualizeze, actualizeze și să șteargă task-uri.
+
+
 ![image](https://github.com/user-attachments/assets/686339f3-5935-407c-8aa0-2fd1c6d66a98)
 ![image](https://github.com/user-attachments/assets/7bec9bf7-6bbe-460d-8a35-ee9c69abeaae)
 ![image](https://github.com/user-attachments/assets/90d573bf-22a8-4dc3-ad11-2f3dbe8760c7)
