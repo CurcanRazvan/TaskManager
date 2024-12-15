@@ -32,9 +32,9 @@ Pentru a începe să lucrezi cu proiectul, clonează-l pe computerul tau folosin
 
 git clone https://github.com/USERNAME/TaskManager-GenTech.git
 
-### 2. Intră în directorul proiectului:
+### 2. Intră în folderul proiectului:
 
-După ce ai clonat repository-ul, navighează în directorul proiectului:
+După ce ai clonat repository-ul, navighează în folderul proiectului:
 
 cd TaskManager-GenTech
 
@@ -49,7 +49,7 @@ Dacă ai deja Maven instalat, poți să construiești și să rulezi aplicația 
 java -jar target/TaskManager-GenTech-0.0.1-SNAPSHOT.jar
 
 ### 4. Testează API-ul
-Poți testa API-ul folosind Postman, cURL sau orice alt instrument pentru interacțiunea cu API-urile RESTful. Iată câteva exemple de endpoint-uri pentru a interacționa cu aplicația:
+Poți testa API-ul folosind Postman, cURL sau orice alt instrument pentru interacțiunea cu API-urile RESTful.
 
 GET toate task-urile:
 Endpoint: GET http://localhost:8080/api/tasks
