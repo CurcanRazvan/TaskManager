@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap-icons/1.10.2/font/bootstrap-icons.css}" />
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">TaskManager GenTech</h1>
+    <hr />
+    <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Tasks</th>
+            <th>Id</th>
+            <th>Descriere</th>
+            <th>Complet</th>
+            <th>Creat</th>
+            <th>Actualizat</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${tasks}">
+            <td>
+                <a class="btn btn-warning btn-sm" th:href="@{'/edit/' + ${item.id}}">
+                    <i class="bi bi-pencil-fill"></i> Edit</a>
+                <a class="btn btn-danger btn-sm" th:href="@{'/delete/' + ${item.id}}">
+                    <i class="bi bi-trash-fill"></i> Delete</a>
+            </td>
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.description}"></td>
+            <td>
+                <span th:if="${item.isComplete} == true" class="badge bg-success" th:text="'Yes'"></span>
+                <span th:unless="${item.isComplete} == true" class="badge bg-danger" th:text="'No'"></span>
+            </td>
+            <td th:text="${item.createdAt}"></td>
+            <td th:text="${item.updatedAt}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <a class="btn btn-outline-primary" href="/create-todo">
+            <i class="bi bi-plus-square-fill"></i> Adaugă un Task</a>
+    </p>
+</div>
+<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

@@ -12,25 +12,25 @@ import java.util.Optional;
 @Service
 public class TaskService {
     @Autowired
-    private TaskRepository taskRepository; // Injectează TaskRepository
+    private TaskRepository taskRepository; //Injecteaza TaskRepository
 
     public Iterator<Task> getAll() {
-        return taskRepository.findAll().iterator(); // Returnează toate task-urile
+        return taskRepository.findAll().iterator(); //Returneaza toate taskurile
     }
 
     public Optional<Task> getById(Long id) {
-        return taskRepository.findById(id); // Găsește task-ul după ID
+        return taskRepository.findById(id); //Gaseste taskul dupa ID
     }
 
     public Task save(Task task) {
         if (task.getId() == null) {
-            task.setCreatedAt(Instant.now()); // Setează data creării dacă ID-ul e null
+            task.setCreatedAt(Instant.now()); //Seteaza data crearii dacă ID-ul e null
         }
-        task.setUpdatedAt(Instant.now()); // Setează data actualizării
-        return taskRepository.save(task); // Salvează task-ul
+        task.setUpdatedAt(Instant.now()); // Seteaza data actualizarii
+        return taskRepository.save(task); // Salveaza taskul
     }
 
     public void delete(Task task) {
-        taskRepository.delete(task); // Șterge task-ul
+        taskRepository.delete(task); // Șterge taskul
     }
 }
