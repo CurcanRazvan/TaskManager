@@ -75,7 +75,7 @@ Corpul JSON:
 DELETE pentru a șterge un task:
 Endpoint: DELETE http://localhost:8080/api/tasks/{id}
 
-Accesarea consolei H2
+**Accesarea consolei H2**
 
 Aplicația folosește baza de date H2 pentru testare. Pentru a accesa consola H2, urmează acești pași:
 
