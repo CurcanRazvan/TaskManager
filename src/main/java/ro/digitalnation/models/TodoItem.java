@@ -11,14 +11,13 @@ import java.time.Instant;
 @Setter
 @Entity
 @Table(name = "todo_items")
-
-public class Task implements Serializable {
+public class TodoItem implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String description;
+    private String description; // Asigură-te că acest câmp există
 
     private Boolean isComplete;
 
@@ -31,5 +30,4 @@ public class Task implements Serializable {
         return String.format("TodoItem{id=%s, description='%s', isComplete='%s', createdAt='%s', updatedAt='%s'}",
                 id, description, isComplete, createdAt, updatedAt);
     }
-
 }
