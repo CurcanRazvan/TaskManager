@@ -40,10 +40,10 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center mb-4">
-            <h2>Add a new Todo Item</h2>
+            <h2>Edit Todo Item</h2>
         </div>
         <div class="col-md-6 offset-md-3">
-            <form th:action="@{/todo}" th:object="${todoItem}" method="POST">
+            <form th:action="@{/todo/{id}(id=${todo.id})}" th:object="${todo}" method="POST">
                 <div class="form-group">
                     <label for="description" class="form-label">Description</label>
                     <input class="form-control"
@@ -61,8 +61,10 @@
                         Completed?
                     </label>
                 </div>
+                <input type="hidden" th:field="*{createdAt}" />
+                <input type="hidden" th:field="*{updatedAt}" />
                 <button type="submit" class="btn btn-outline-success w-100">
-                    <i class="bi bi-plus-square-fill"></i> Add Todo
+                    <i class="bi bi-plus-square-fill"></i> Update
                 </button>
             </form>
         </div>

@@ -4,50 +4,88 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Adăugăm fișierul CSS pentru Bootstrap -->
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .btn-outline-success {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .btn-outline-success:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .table th, .table td {
+            border: 2px solid transparent; /* Marginile transparente */
+        }
+        .alert-success {
+            background-color: #d4edda; /* Verde mai spălăcit */
+            color: #155724;
+        }
+        .alert-warning {
+            background-color: #fff3cd; /* Galben mai spălăcit */
+            color: #856404;
+        }
+        .btn-create-task {
+            width: 25%; /* Un sfert din tabel */
+            margin: 0 auto; /* Centrat sub tabel */
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <h1>Spring Boot 3.0.0 Todo Application</h1>
-    <hr />
-
-    <table class="table table-bordered table-striped">
-        <thead>
-        <tr>
-            <th>Actions</th>
-            <th>Id</th>
-            <th>Description</th>
-            <th>Is Complete</th>
-            <th>Created At</th>
-            <th>Updated At</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="item : ${todoItems}" th:class="${item.isComplete} ? 'alert alert-success' : 'alert alert-warning'">
-            <td>
-                <div class="btn btn-group-sm" role="group">
-                    <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}">
-                        <i class="bi bi-pencil-fill"></i> Edit</a>
-                    <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">
-                        <i class="bi bi-trash-fill"></i> Delete</a>
-                </div>
-            </td>
-            <td th:text="${item.id}"></td>
-            <td th:text="${item.description}"></td>
-            <td>
-                <span th:if="${item.isComplete} == true" th:text="Yes" />
-                <span th:unless="${item.isComplete} == true" th:text="No" />
-            </td>
-            <td th:text="${item.createdAt}"></td>
-            <td th:text="${item.updatedAt}"></td>
-        </tr>
-        </tbody>
-    </table>
-
-    <p><a class="btn btn-outline-success" href="/create-todo">
-        <i class="bi bi-plus-square-fill"></i> Create a Todo</a>
-    </p>
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1>TaskManager GenTech</h1>
+        </div>
+        <div class="col-12">
+            <table class="table table-bordered table-striped">
+                <thead class="text-center"> <!-- Centrăm titlurile coloanelor -->
+                <tr>
+                    <th>Tasks</th>
+                    <th>Id</th>
+                    <th>Description</th>
+                    <th>Is Complete</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item : ${todoItems}" th:class="${item.isComplete} ? 'alert alert-success' : 'alert alert-warning'">
+                    <td>
+                        <div class="btn btn-group-sm" role="group">
+                            <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}">
+                                <i class="bi bi-pencil-fill"></i> Edit</a>
+                            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">
+                                <i class="bi bi-trash-fill"></i> Delete</a>
+                        </div>
+                    </td>
+                    <td th:text="${item.id}"></td>
+                    <td th:text="${item.description}"></td>
+                    <td>
+                        <span th:if="${item.isComplete} == true" th:text="'Yes'"></span>
+                        <span th:unless="${item.isComplete} == true" th:text="'No'"></span>
+                    </td>
+                    <td th:text="${item.createdAt}"></td>
+                    <td th:text="${item.updatedAt}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="text-center"><a class="btn btn-outline-success btn-create-task" href="/create-todo">
+                <i class="bi bi-plus-square-fill"></i> Create a Task</a>
+            </p>
+        </div>
+    </div>
 </div>
-
-<!
+<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

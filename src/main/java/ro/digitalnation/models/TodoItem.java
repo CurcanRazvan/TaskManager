@@ -17,7 +17,7 @@ public class TodoItem implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String description; // Asigură-te că acest câmp există
+    private String description;
 
     private Boolean isComplete;
 
