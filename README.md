@@ -14,6 +14,7 @@ Aceasta este o aplicație Spring Boot pentru gestionarea task-urilor. Permite ut
 - **Java 17**
 - **Spring Boot 3.x**
 - **Thymeleaf**
+- **Bootstrap**
 - **Spring Web MVC** pentru crearea API-ului RESTful.
 - **Spring Data JPA** pentru interacțiunea cu baza de date.
 - **H2 Database** (bază de date în memorie, folosită pentru testare).
